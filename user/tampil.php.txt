@@ -1,0 +1,44 @@
+<?php
+ 
+$server = "localhost" ;
+$username = "root" ;
+$password = "" ;
+$database = "sipi";
+ 
+//Koneksi dan memilih database di server
+mysql_connect($server,$username,$password) or die ("Koneksi database gagal");
+mysql_select_db($database) or die ("Database tidak tersedia");
+ 
+echo '<h3>Data User</h3>
+<table>
+<tr>
+<th>No</th>
+<th>Username</th>
+<th>Password</th>
+<th>Nama</th>
+<th>Level</th>
+</tr>
+<tr>';
+ 
+$i=0; //inisialisasi untuk penomoran data
+//perintah untuk menampilkan data, id_brg terbesar ke kecil
+$tampil = "SELECT * FROM user ORDER BY id_user DESC";
+//perintah menampilkan data dikerjakan
+$sql = mysql_query($tampil);
+ 
+//tampilkan seluruh data yang ada pada tabel user
+while($data = mysql_fetch_array($sql))
+ {
+ $i++;
+ 
+echo "
+ <td>".$i."</td>
+ <td>".$data[username]."</td>
+ <td>".$data[password]."</td>
+ <td>".$data[nama]."</td>
+ <td>".$data[level]."</td>
+ </tr>";
+ }
+echo '</table>';
+ 
+?>
