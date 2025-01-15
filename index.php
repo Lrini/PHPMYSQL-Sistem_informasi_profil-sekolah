@@ -65,7 +65,7 @@ include("koneksi.php");
             </div>
 
             <!--logo start-->
-            <a href="index.html" class="logo">Sekolah Dasar Kristen <span class="lite">Citra Bangsa</span></a>
+            <a href="index.html" class="logo">Sekolah Dasar Kristenn <span class="lite">Citra Bangsa</span></a>
             <!--logo end-->
 
 
